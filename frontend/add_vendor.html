@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Vendor - Vendor Payment System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<script src="js/validation.js"></script>
+<body>
+  <div class="container">
+    <h2>Add New Vendor</h2>
+    <form method="POST" action="http://localhost:5000/add_vendor" id="vendorForm">
+      <label>Name:</label>
+      <input type="text" name="name" required />
+
+      <label>Company Name:</label>
+      <input type="text" name="company" required />
+
+      <label>Email:</label>
+      <input type="email" name="email" required />
+
+      <label>Mobile Number:</label>
+      <input type="tel" name="mobile" pattern="[0-9]{10}" required />
+
+      <button type="submit">Add Vendor</button>
+    </form>
+  </div>
+</body>
+</html>

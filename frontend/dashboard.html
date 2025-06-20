@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vendor Payment Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <body>
+    <div class="container">
+      <h1>Vendor Payment Dashboard</h1>
+  
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <input type="text" id="searchInput" placeholder="Search by vendor or invoice..." style="width: 60%; padding: 8px;" />
+        <button onclick="exportTableToExcel('paymentTable')" style="padding: 8px 12px;">Export to Excel</button>
+      </div>
+  
+      <table id="paymentTable">
+        <thead>
+          <tr>
+            <th>Invoice</th>
+            <th>Vendor Name</th>
+            <th>Gross Amount</th>
+            <th>GST</th>
+            <th>TDS</th>
+            <th>Net Amount</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JS will insert rows here -->
+        </tbody>
+      </table>
+    </div>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>  
+</body>
+</html>

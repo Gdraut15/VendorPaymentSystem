@@ -1,0 +1,23 @@
+<!-- backend/templates/email_template.html -->
+<!DOCTYPE html>
+<html>
+  <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
+    <div style="max-width: 600px; background: white; padding: 20px; border-radius: 8px;">
+      <h2 style="color: #0073e6;">Vendor Payment Notification</h2>
+      <p>Dear <strong>{{ vendor_name }}</strong>,</p>
+
+      <p>Your payment has been processed. Please find the details below:</p>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr><td><strong>Invoice Number:</strong></td><td>{{ invoice }}</td></tr>
+        <tr><td><strong>Gross Amount:</strong></td><td>₹{{ amount }}</td></tr>
+        <tr><td><strong>GST Deducted:</strong></td><td>₹{{ gst_amount }}</td></tr>
+        <tr><td><strong>TDS Deducted:</strong></td><td>₹{{ tds_amount }}</td></tr>
+        <tr><td><strong>Net Paid:</strong></td><td><strong>₹{{ net_amount }}</strong></td></tr>
+        <tr><td><strong>Payment Date:</strong></td><td>{{ date }}</td></tr>
+      </table>
+
+      <p>Regards,<br>NTPS Accounts Team</p>
+    </div>
+  </body>
+</html>

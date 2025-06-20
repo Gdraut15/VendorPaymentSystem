@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Payment</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Add Payment Details</h2>
+    <form id="paymentForm" method="POST" action="http://localhost:5000/add_payment">
+      
+      <label for="vendor">Select Vendor:</label>
+      <select id="vendor" name="vendor" required>
+        <option value="">-- Select --</option>
+        <option value="V001">Vendor A</option>
+        <option value="V002">Vendor B</option>
+        <!-- Populate dynamically in future -->
+      </select>
+      <span class="error" id="vendorError"></span>
+
+      <label for="invoice">Invoice Number:</label>
+      <input type="text" id="invoice" name="invoice" required>
+      <span class="error" id="invoiceError"></span>
+
+      <label for="amount">Gross Amount (₹):</label>
+      <input type="number" id="amount" name="amount" required>
+      <span class="error" id="amountError"></span>
+
+      <label for="gst">GST Deduction (%):</label>
+      <input type="number" id="gst" name="gst" required>
+      <span class="error" id="gstError"></span>
+
+      <label for="tds">TDS Deduction (%):</label>
+      <input type="number" id="tds" name="tds" required>
+      <span class="error" id="tdsError"></span>
+
+      <label for="date">Payment Date:</label>
+      <input type="date" id="date" name="date" required>
+      <span class="error" id="dateError"></span>
+
+      <button type="submit">Submit Payment</button>
+    </form>
+  </div>
+
+  <script src="js/validation_payment.js"></script>
+</body>
+</html>

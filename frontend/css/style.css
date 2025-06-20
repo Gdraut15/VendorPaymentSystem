@@ -1,0 +1,237 @@
+/* Reset & Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.4s ease;
+    position: relative;
+  }
+  
+  /* Toggle Switch */
+  .dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 34px;
+    top: 0; left: 0; right: 0; bottom: 0;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(24px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-in-out;
+    text-align: center;
+  }
+  
+  /* Heading */
+  .container h2 {
+    color: #333;
+    margin-bottom: 25px;
+  }
+  
+  /* Labels & Inputs */
+  label {
+    display: block;
+    text-align: left;
+    margin: 15px 0 6px;
+    color: #444;
+    font-weight: 500;
+  }
+  
+  label i {
+    margin-right: 8px;
+    color: #0077ff;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #0077ff;
+    box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.15);
+  }
+  
+  /* Button */
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #0077ff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  button:hover {
+    background-color: #005fcc;
+    transform: scale(1.02);
+  }
+  
+  /* Forgot Password */
+  .form-footer {
+    text-align: right;
+    margin-top: 8px;
+  }
+  
+  .forgot-link {
+    font-size: 0.9rem;
+    color: #0077ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .forgot-link:hover {
+    color: #005fcc;
+    text-decoration: underline;
+  }
+  
+  /* Signup Link */
+  .signup-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .signup-link {
+    color: #0077ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .signup-link:hover {
+    color: #005fcc;
+    text-decoration: underline;
+  }
+  
+  /* Dark Mode */
+  body.dark {
+    background: linear-gradient(to right, #1f1f1f, #333);
+    color: #eee;
+  }
+  
+  body.dark .container {
+    background: #222;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  }
+  
+  body.dark h2,
+  body.dark label {
+    color: #ccc;
+  }
+  
+  body.dark input {
+    background: #2f2f2f;
+    color: #f0f0f0;
+    border: 1px solid #555;
+  }
+  
+  body.dark input:focus {
+    border-color: #66aaff;
+    box-shadow: 0 0 0 3px rgba(102, 170, 255, 0.2);
+  }
+  
+  body.dark button {
+    background-color: #66aaff;
+  }
+  
+  body.dark button:hover {
+    background-color: #5599dd;
+  }
+  
+  body.dark .forgot-link,
+  body.dark .signup-text,
+  body.dark .signup-link {
+    color: #99cfff;
+  }
+  body.dark .signup-link:hover,
+  body.dark .forgot-link:hover {
+    color: #66aaff;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
