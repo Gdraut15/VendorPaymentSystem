@@ -29,3 +29,6 @@ def login():
         return jsonify({'message': 'Login successful'}), 200
     else:
         return jsonify({'error': 'Invalid credentials'}), 401
+@auth_routes.route('/hello', methods=['GET'])
+def hello():
+    return "✅ Hello from auth!", 200

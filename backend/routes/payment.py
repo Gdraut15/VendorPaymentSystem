@@ -1,6 +1,8 @@
 from flask import Blueprint, request, jsonify
 from config.db_config import create_connection
 from datetime import date
+from flask_mail import Message
+import builtins  # to access `mail` from app.py
 
 payment_routes = Blueprint('payment_routes', __name__)
 
@@ -29,6 +31,26 @@ def add_payment():
         conn.commit()
         cursor.close()
         conn.close()
+
+        # ✅ Optional Email Notification (safe for GitHub/demo)
+        try:
+            msg = Message(
+                subject="Payment Confirmation",
+                sender="demo.project.email@gmail.com",       # dummy sender
+                recipients=["receiver@example.com"],         # dummy receiver
+                body=f"""
+                ✅ Payment Recorded:
+
+                Vendor ID: {vendor_id}
+                Amount: ₹{amount}
+                GST: ₹{gst}
+                TDS: ₹{tds}
+                Date: {payment_date}
+                """
+            )
+            builtins.mail.send(msg)
+        except Exception as e:
+            print("📭 Email not sent (mock/demo mode):", e)
 
         return jsonify({
             'message': 'Payment added successfully',
